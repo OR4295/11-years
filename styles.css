@@ -11,17 +11,23 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
   font-family: 'Inter', system-ui, sans-serif;
   background: linear-gradient(180deg, #fff8f0 0%, #f6efeb 100%);
   color: var(--text);
 }
 
 .page-shell {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
@@ -43,20 +49,27 @@ body {
   line-height: 1.6;
 }
 
-.slideshow,
-.questionnaire {
-  background: var(--surface);
-  border-radius: 26px;
-  box-shadow: 0 20px 60px rgba(57, 34, 24, 0.12);
-  padding: 18px;
-  margin-bottom: 28px;
+.slideshow {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .slide {
   display: none;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding: 40px 24px 100px;
+  box-sizing: border-box;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
 }
 
 .slide.active {
@@ -64,15 +77,17 @@ body {
 }
 
 .slide img {
-  width: 100%;
-  max-height: 560px;
-  object-fit: cover;
+  width: auto;
+  max-width: 90vw;
+  max-height: 70vh;
+  object-fit: contain;
   border-radius: 20px;
   background: #f0e5df;
 }
 
 .caption {
   text-align: center;
+  max-width: 760px;
 }
 
 .caption h2 {
@@ -86,11 +101,17 @@ body {
 }
 
 .slideshow-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  margin-top: 16px;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .slideshow-controls button {
@@ -113,8 +134,48 @@ body {
 }
 
 form {
+  display: contents;
+}
+
+.question-card,
+.intro-card {
+  width: 100%;
+  max-width: 760px;
+  background: #fff6f1;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: inset 0 0 0 1px rgba(217, 93, 79, 0.12);
   display: grid;
-  gap: 16px;
+  gap: 18px;
+  text-align: left;
+}
+
+.intro-card {
+  text-align: center;
+}
+
+.intro-card h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--accent);
+}
+
+.intro-card p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.question-card h2 {
+  margin: 0;
+  color: var(--accent);
+}
+
+.question-card p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
 }
 
 label {
@@ -124,7 +185,7 @@ label {
   font-weight: 600;
 }
 
-input[type='text'], textarea {
+label input[type='text'], label textarea {
   width: 100%;
   border: 1px solid #e3d6cc;
   border-radius: 16px;
@@ -134,7 +195,7 @@ input[type='text'], textarea {
   color: var(--text);
 }
 
-textarea {
+label textarea {
   resize: vertical;
 }
 
@@ -146,23 +207,34 @@ button[type='submit'] {
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  width: fit-content;
 }
 
 .notice {
   margin-top: 12px;
   color: var(--muted);
   font-size: 0.95rem;
+  text-align: center;
 }
 
 .message {
   margin-top: 12px;
   font-weight: 700;
   color: var(--accent);
+  text-align: center;
 }
 
 @media (max-width: 640px) {
+  .slide {
+    min-height: calc(100vh - 140px);
+    padding: 32px 16px 120px;
+  }
+
   .slideshow-controls {
     flex-direction: column;
+    align-items: stretch;
+    bottom: 8px;
+    padding: 0 16px;
   }
 
   .slideshow-controls button {

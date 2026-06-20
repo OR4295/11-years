@@ -8,70 +8,93 @@
 </head>
 <body>
   <main class="page-shell">
-    <section class="hero">
-      <h1>Happy Anniversary!</h1>
-      <p>Each child made a special slide just for you. Tap through the memories and then answer a few questions at the end.</p>
-    </section>
-
     <section class="slideshow" aria-label="Anniversary slideshow">
-      <div class="slide active" data-slide="1">
-        <img src="images/slide1.jpg" alt="Kids anniversary drawing 1" />
-        <div class="caption">
-          <h2>Slide 1</h2>
-          <p>Photo of the first kids’ design.</p>
+      <form id="questionForm">
+        <div class="slide active" data-slide="1">
+          <div class="intro-card">
+            <h1>Happy Anniversary!</h1>
+            <p>Each child made a special slide just for you. Use the buttons to move through the presentation, and answer the last questions at the end.</p>
+          </div>
         </div>
-      </div>
+        <div class="slide" data-slide="2">
+          <img src="images/slide1.jpg" alt="Kids anniversary drawing 1" />
+          <div class="caption">
+            <h2>Slide 1</h2>
+            <p>Photo of the first kids’ design.</p>
+          </div>
+        </div>
 
-      <div class="slide" data-slide="2">
-        <img src="images/slide2.jpg" alt="Kids anniversary drawing 2" />
-        <div class="caption">
-          <h2>Slide 2</h2>
-          <p>Photo of the second kids’ design.</p>
+        <div class="slide" data-slide="3">
+          <img src="images/slide2.jpg" alt="Kids anniversary drawing 2" />
+          <div class="caption">
+            <h2>Slide 2</h2>
+            <p>Photo of the second kids’ design.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="slide" data-slide="3">
-        <img src="images/slide3.jpg" alt="Kids anniversary drawing 3" />
-        <div class="caption">
-          <h2>Slide 3</h2>
-          <p>Photo of the third kids’ design.</p>
+        <div class="slide" data-slide="4">
+          <img src="images/slide3.jpg" alt="Kids anniversary drawing 3" />
+          <div class="caption">
+            <h2>Slide 3</h2>
+            <p>Photo of the third kids’ design.</p>
+          </div>
         </div>
-      </div>
+
+        <div class="slide" data-slide="5">
+          <div class="question-card">
+            <h2>Question 1</h2>
+            <p>Which slide made you smile most?</p>
+            <label>
+              Your answer
+              <input type="text" name="favoriteSlide" required />
+            </label>
+          </div>
+        </div>
+
+        <div class="slide" data-slide="6">
+          <div class="question-card">
+            <h2>Question 2</h2>
+            <p>What was your favorite memory from our time together?</p>
+            <label>
+              Your answer
+              <textarea name="favoriteMemory" rows="5" required></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="slide" data-slide="7">
+          <div class="question-card">
+            <h2>Question 3</h2>
+            <p>What would you like to do next to celebrate?</p>
+            <label>
+              Your answer
+              <textarea name="celebrationIdea" rows="4" required></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="slide" data-slide="8">
+          <div class="question-card">
+            <h2>Question 4</h2>
+            <p>Who should receive the biggest hug today?</p>
+            <label>
+              Your answer
+              <input type="text" name="hugAnswer" required />
+            </label>
+            <label>
+              Your name (optional)
+              <input type="text" name="name" />
+            </label>
+            <button type="submit">Send Answers</button>
+          </div>
+        </div>
+      </form>
 
       <div class="slideshow-controls">
         <button id="prevBtn" type="button">Previous</button>
-        <span id="slideIndicator">1 / 3</span>
+        <span id="slideIndicator">1 / 8</span>
         <button id="nextBtn" type="button">Next</button>
       </div>
-    </section>
-
-    <section class="questionnaire" id="questionnaire">
-      <h2>Share your thoughts</h2>
-      <p>Answer these questions and your responses will be emailed to me.</p>
-
-      <form id="questionForm">
-        <label>
-          1) Which slide made you smile most?
-          <input type="text" name="favoriteSlide" required />
-        </label>
-
-        <label>
-          2) What was your favorite memory from our time together?
-          <textarea name="favoriteMemory" rows="4" required></textarea>
-        </label>
-
-        <label>
-          3) What would you like to do next to celebrate?
-          <textarea name="celebrationIdea" rows="3"></textarea>
-        </label>
-
-        <label>
-          Your name (optional):
-          <input type="text" name="name" />
-        </label>
-
-        <button type="submit">Send Answers</button>
-      </form>
 
       <p class="notice">After you add the images, replace the form action with a service like Formspree or EmailJS to email submissions.</p>
       <div id="message" class="message"></div>

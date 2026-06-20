@@ -23,6 +23,17 @@ nextBtn.addEventListener('click', () => {
   updateSlide();
 });
 
+window.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight') {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide();
+  }
+  if (event.key === 'ArrowLeft') {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide();
+  }
+});
+
 form.addEventListener('submit', event => {
   event.preventDefault();
   const formData = new FormData(form);
