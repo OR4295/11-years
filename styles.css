@@ -178,6 +178,34 @@ form {
   line-height: 1.6;
 }
 
+.yes-no-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.yes-no-button {
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: white;
+  color: var(--accent);
+  padding: 14px 28px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.yes-no-button:hover {
+  transform: translateY(-1px);
+}
+
+.yes-no-button.selected {
+  background: var(--accent);
+  color: white;
+}
+
 label {
   display: grid;
   gap: 10px;

@@ -34,6 +34,25 @@ window.addEventListener('keydown', event => {
   }
 });
 
+const yesNoButtons = Array.from(document.querySelectorAll('.yes-no-button'));
+
+yesNoButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const group = button.closest('.yes-no-buttons');
+    const targetInputId = group?.dataset.target;
+    if (!targetInputId) return;
+
+    const groupButtons = Array.from(group.querySelectorAll('.yes-no-button'));
+    groupButtons.forEach(btn => btn.classList.remove('selected'));
+    button.classList.add('selected');
+
+    const hiddenInput = document.getElementById(targetInputId);
+    if (hiddenInput) {
+      hiddenInput.value = button.dataset.value;
+    }
+  });
+});
+
 form.addEventListener('submit', event => {
   event.preventDefault();
   const formData = new FormData(form);

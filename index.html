@@ -43,48 +43,48 @@
         <div class="slide" data-slide="5">
           <div class="question-card">
             <h2>Question 1</h2>
-            <p>Which slide made you smile most?</p>
-            <label>
-              Your answer
-              <input type="text" name="favoriteSlide" required />
-            </label>
+            <p>Do you like Dadbum?</p>
+            <div class="yes-no-buttons" role="group" aria-label="Do you like Dadbum?">
+              <button type="button" class="yes-no-button" data-value="Yes">Yes</button>
+              <button type="button" class="yes-no-button" data-value="No">No</button>
+            </div>
+            <input type="hidden" name="likeDadbum" id="likeDadbum" required />
           </div>
         </div>
 
         <div class="slide" data-slide="6">
           <div class="question-card">
             <h2>Question 2</h2>
-            <p>What was your favorite memory from our time together?</p>
-            <label>
-              Your answer
-              <textarea name="favoriteMemory" rows="5" required></textarea>
-            </label>
+            <p>Do you like shows?</p>
+            <div class="yes-no-buttons" role="group" aria-label="Do you like shows?" data-target="likeShows">
+              <button type="button" class="yes-no-button" data-value="Yes">Yes</button>
+              <button type="button" class="yes-no-button" data-value="No">No</button>
+            </div>
+            <input type="hidden" name="likeShows" id="likeShows" required />
           </div>
         </div>
 
         <div class="slide" data-slide="7">
           <div class="question-card">
             <h2>Question 3</h2>
-            <p>What would you like to do next to celebrate?</p>
-            <label>
-              Your answer
-              <textarea name="celebrationIdea" rows="4" required></textarea>
-            </label>
+            <p>Do you like a great breakfast?</p>
+            <div class="yes-no-buttons" role="group" aria-label="Do you like a great breakfast?" data-target="likeBreakfast">
+              <button type="button" class="yes-no-button" data-value="Yes">Yes</button>
+              <button type="button" class="yes-no-button" data-value="No">No</button>
+            </div>
+            <input type="hidden" name="likeBreakfast" id="likeBreakfast" required />
           </div>
         </div>
 
         <div class="slide" data-slide="8">
           <div class="question-card">
             <h2>Question 4</h2>
-            <p>Who should receive the biggest hug today?</p>
-            <label>
-              Your answer
-              <input type="text" name="hugAnswer" required />
-            </label>
-            <label>
-              Your name (optional)
-              <input type="text" name="name" />
-            </label>
+            <p>Do you like a great breakfast with a show with dadbum?</p>
+            <div class="yes-no-buttons" role="group" aria-label="Do you like a great breakfast with a show with dadbum?" data-target="likeBreakfastShowDadbum">
+              <button type="button" class="yes-no-button" data-value="Yes">Yes</button>
+              <button type="button" class="yes-no-button" data-value="No">No</button>
+            </div>
+            <input type="hidden" name="likeBreakfastShowDadbum" id="likeBreakfastShowDadbum" required />
             <button type="submit">Send Answers</button>
           </div>
         </div>
