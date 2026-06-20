@@ -56,14 +56,34 @@ yesNoButtons.forEach(button => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   const formData = new FormData(form);
-  const values = Object.fromEntries(formData.entries());
 
-  message.textContent = 'Thank you! Your answers are ready to send.';
-  form.reset();
-
-  console.log('Questionnaire submitted:', values);
-  // If you add a form service, remove this console logging and
-  // add the service's form action or submit handler.
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      Accept: 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Submission failed.');
+        });
+      }
+      return response.json();
+    })
+    .then(() => {
+      message.textContent = 'Thank you! Your answers are ready to send.';
+      form.reset();
+      if (currentSlide < slides.length - 1) {
+        currentSlide += 1;
+        updateSlide();
+      }
+    })
+    .catch(error => {
+      message.textContent = 'Sorry, there was a problem sending your answers.';
+      console.error('Form submission error:', error);
+    });
 });
 
 updateSlide();

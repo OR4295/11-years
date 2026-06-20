@@ -9,42 +9,33 @@
 <body>
   <main class="page-shell">
     <section class="slideshow" aria-label="Anniversary slideshow">
-      <form id="questionForm">
+      <form id="questionForm" action="https://formspree.io/f/meewybbj" method="POST">
         <div class="slide active" data-slide="1">
-          <div class="intro-card">
-            <h1>Happy Anniversary!</h1>
-            <p>Each child made a special slide just for you. Use the buttons to move through the presentation, and answer the last questions at the end.</p>
-          </div>
-        </div>
-        <div class="slide" data-slide="2">
-          <img src="images/slide1.jpg" alt="Kids anniversary drawing 1" />
+          <img src="images/1.png" alt="Slide 1" />
           <div class="caption">
             <h2>Slide 1</h2>
-            <p>Photo of the first kids’ design.</p>
+          </div>
+        </div>
+
+        <div class="slide" data-slide="2">
+          <img src="images/2.png" alt="Slide 2" />
+          <div class="caption">
+            <h2>Slide 2</h2>
           </div>
         </div>
 
         <div class="slide" data-slide="3">
-          <img src="images/slide2.jpg" alt="Kids anniversary drawing 2" />
+          <img src="images/3.png" alt="Slide 3" />
           <div class="caption">
-            <h2>Slide 2</h2>
-            <p>Photo of the second kids’ design.</p>
+            <h2>Slide 3</h2>
           </div>
         </div>
 
         <div class="slide" data-slide="4">
-          <img src="images/slide3.jpg" alt="Kids anniversary drawing 3" />
-          <div class="caption">
-            <h2>Slide 3</h2>
-            <p>Photo of the third kids’ design.</p>
-          </div>
-        </div>
-
-        <div class="slide" data-slide="5">
           <div class="question-card">
             <h2>Question 1</h2>
             <p>Do you like Dadbum?</p>
-            <div class="yes-no-buttons" role="group" aria-label="Do you like Dadbum?">
+            <div class="yes-no-buttons" role="group" aria-label="Do you like Dadbum?" data-target="likeDadbum">
               <button type="button" class="yes-no-button" data-value="Yes">Yes</button>
               <button type="button" class="yes-no-button" data-value="No">No</button>
             </div>
@@ -52,7 +43,7 @@
           </div>
         </div>
 
-        <div class="slide" data-slide="6">
+        <div class="slide" data-slide="5">
           <div class="question-card">
             <h2>Question 2</h2>
             <p>Do you like shows?</p>
@@ -64,7 +55,7 @@
           </div>
         </div>
 
-        <div class="slide" data-slide="7">
+        <div class="slide" data-slide="6">
           <div class="question-card">
             <h2>Question 3</h2>
             <p>Do you like a great breakfast?</p>
@@ -76,7 +67,7 @@
           </div>
         </div>
 
-        <div class="slide" data-slide="8">
+        <div class="slide" data-slide="7">
           <div class="question-card">
             <h2>Question 4</h2>
             <p>Do you like a great breakfast with a show with dadbum?</p>
@@ -86,6 +77,24 @@
             </div>
             <input type="hidden" name="likeBreakfastShowDadbum" id="likeBreakfastShowDadbum" required />
             <button type="submit">Send Answers</button>
+          </div>
+        </div>
+
+        <div class="slide" data-slide="8">
+          <div class="question-card invitation-card">
+            <h2>You Are Invited!</h2>
+            <p>You are invited to Moulin Rouge at the Piccadilly Theatre, with dinner at the Hawksmoor and a one night stay at The Clermont Hotel.</p>
+
+            <div class="caption">
+              <h3>Moulin Rouge — Piccadilly Theatre</h3>
+              <p>"An intoxicating, jaw-dropping spectacle — a riot of colour, heart and pure theatre. The dance numbers left us breathless." — ★★★★★</p>
+
+              <h3>The Clermont Hotel</h3>
+              <p>"Breakfast felt like a coronation: flaky pastries, perfect eggs, and coffee that tasted like morning sunshine. One night was not nearly enough." — ★★★★★</p>
+
+              <h3>Hawksmoor Dinner</h3>
+              <p>"A carnivore's dream with a side of theatre-worthy service. The steak singed our expectations and the sides stole the show." — ★★★★★</p>
+            </div>
           </div>
         </div>
       </form>
